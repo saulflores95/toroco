@@ -2,10 +2,9 @@ import Navbar from '../comp/navbar/Navbar'
 import Contact from '../comp/contact/Contact'
 import App from '../comp/app/App'
 import NoSSR from 'react-no-ssr'
-const contacto = ({ user }) => (
+const contacto = () => (
   <div>
     <App>
-      <Navbar user={user} />
       <div className='container'>
         <NoSSR onLoading={<div>Loading</div>}>
           <Contact />
@@ -20,8 +19,8 @@ const contacto = ({ user }) => (
   </div>
 )
 
-contacto.getInitialProps = async({ req, res }) => {
+/*contacto.getInitialProps = async({ req, res }) => {
   return { user: null }
-}
+}*/
 
 export default contacto

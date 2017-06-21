@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Navbar = ({ }) => (
+const Navbar = () => (
   <div className='container'>
     <div className='ull'>
       <li className='user'><h1></h1></li>
