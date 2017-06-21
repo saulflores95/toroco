@@ -13,11 +13,12 @@ const addFactura = ({ user }) => (
   </div>
 )
 
-addFactura.getInitialProps = async ({ req, res }) => {
+/* addFactura.getInitialProps = async ({ req, res }) => {
   if (!req.user) {
     return res.redirect('/')
   }
   return { user: req.user.username }
 }
+*/
 
 export default addFactura

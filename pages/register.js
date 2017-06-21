@@ -7,6 +7,7 @@ const register = () => (
   </div>
 )
 
+/*
 register.getInitialProps = async({ req, res }) => {
   if (req.user) {
     return res.redirect('/')
@@ -14,5 +15,6 @@ register.getInitialProps = async({ req, res }) => {
   let user = 'No User'
   return { user: user }
 }
+*/
 
 export default register

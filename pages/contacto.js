@@ -21,7 +21,7 @@ const contacto = ({ user }) => (
 )
 
 contacto.getInitialProps = async({ req, res }) => {
-  return { user: req.user }
+  return { user: null }
 }
 
 export default contacto
