@@ -1,4 +1,3 @@
-import React from 'react'
 import Login from '../comp/login/Login'
 
 const check = (user) => {
@@ -7,7 +6,7 @@ const check = (user) => {
   }
 }
 
-const login = ({user}) => (
+const login = ({ user }) => (
   <div>
     {check(user)}
   </div>
@@ -18,7 +17,7 @@ login.getInitialProps = async ({ req, res }) => {
     return res.redirect('/')
   }
   let user = 'No User'
-  return { user: user}
+  return { user: user }
 }
 
 export default login

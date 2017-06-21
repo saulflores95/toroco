@@ -48,6 +48,7 @@ const Video = () => (
             left: 0;
             right: 30%;
             width: 95%;
+            font-family:'Roboto'
             max-width: 50em;
             margin: auto auto 1em;
             box-sizing: border-box;

@@ -1,11 +1,10 @@
-import React from 'react'
-import { Row, Col } from 'react-grid-system'
-import Link  from 'next/link'
+import Link from 'next/link'
 
-const Navbar = () => (
+const Navbar = ({ user }) => (
   <div className='container'>
     <div className='ull'>
-      <li className='li'><Link to='/'><img className='img' src='http://taketheleash.nl/wp-content/plugins/ionmoon-flex-slider/assets/img/leftarrowdark.png' /></Link></li>
+      <li className='user'><h1>{user.username}</h1></li>
+      <li className='li'><Link href='/'><img className='img' src='http://taketheleash.nl/wp-content/plugins/ionmoon-flex-slider/assets/img/leftarrowdark.png' /></Link></li>
     </div>
     <style jsx>
       {`
@@ -31,8 +30,12 @@ const Navbar = () => (
           width:50px;
         }
 
-        .li {
-            float: left;
+        .user {
+            display:block;
+            float: right;
+            margin-right:100px;
+            font-size:25;
+            font-family: Roboto;
         }
 
         .li a {

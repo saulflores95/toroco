@@ -4,14 +4,13 @@ import Router from 'next/router'
 import Link from 'next/link'
 
 export default class Login extends Component {
-
   constructor () {
     super()
     this.state = {
     }
   }
 
-  login() {
+  login () {
     let username = this.refs.username.value
     let password = this.refs.password.value
     if (username && password) {
@@ -26,37 +25,36 @@ export default class Login extends Component {
         console.log(error)
       })
     }
-    if(!username){
+    if (!username) {
       alert('Username Missing')
     }
-    if(!password){
+    if (!password) {
       alert('Password Missing')
     }
-
   }
 
   render () {
     return (
       <div>
-          <div className='container'>
-            <div className='vid-container'>
-              <img className='bgvid' src='http://wallpapercave.com/wp/2GFdZrW.jpg' />
-              <div className='inner-container'>
-                <img src='http://wallpapercave.com/wp/2GFdZrW.jpg' className='bgvid' className='bgvid inner' />
-                <div className='box'>
-                  <h1>Login</h1>
-                  <input type='text' ref="username" placeholder='Username'/>
+        <div className='container'>
+          <div className='vid-container'>
+            <img className='bgvid' src='http://wallpapercave.com/wp/2GFdZrW.jpg' />
+            <div className='inner-container'>
+              <img src='http://wallpapercave.com/wp/2GFdZrW.jpg' className='bgvid inner' />
+              <div className='box'>
+                <h1>Login</h1>
+                <input type='text' ref='username' placeholder='Username' />
 
-                  <input type='password' ref="password" placeholder='Password'/>
+                <input type='password' ref='password' placeholder='Password' />
 
-                  <button type="button" onClick={this.login.bind(this)}>Log In</button>
-                  <p>Not a member? <span><Link href="/register"><a>Register</a></Link></span></p>
-                </div>
+                <button type='button' onClick={this.login.bind(this)}>Log In</button>
+                <p>Not a member? <span><Link href='/register'><a>Register</a></Link></span></p>
               </div>
             </div>
           </div>
+        </div>
         <style jsx>
-        {`
+          {`
           body{
             padding:0;
             margin:0;

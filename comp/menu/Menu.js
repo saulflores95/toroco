@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 const Menu = () => (
@@ -9,7 +8,7 @@ const Menu = () => (
           <li className='li'><Link href='/quienes-somos'><a>Quienes Somos</a></Link></li>
           <li className='li'><Link href='/servicios'><a>Servicios</a></Link></li>
           <li className='li'><Link href='/contacto'><a>Contactanos</a></Link></li>
-          <li className='li'><img src='http://www.torocotrucking.com/freightmanager/images/main_logo.jpg'/></li>
+          <li className='li'><img src='http://www.torocotrucking.com/freightmanager/images/main_logo.jpg' /></li>
         </ul>
       </div>
     </div>
@@ -39,6 +38,7 @@ const Menu = () => (
           }
 
           .li {
+            font-family: Roboto;
             color: gray;
             font-size: 45px;
             cursor: pointer;
@@ -101,6 +101,8 @@ const Menu = () => (
             padding-top: 60px;
             font-weight: bold;
             text-align: center;
+            font-family: Roboto;
+            text-decoration:none;
             transition: font-size 0.1s ease-in-out;
             -o-transition: font-size color 0.5s ease-in-out; /* opera */
             -ms-transition: font-size color 0.5s ease-in-out; /* IE 10 */
@@ -108,6 +110,14 @@ const Menu = () => (
             -webkit-transition: font-size color 0.5s ease-in-out; /*safari and chrome */
           }
 
+          li {
+            list-style-type: none;
+          }
+
+          .li img {
+            width: 58%;
+            height: 100px;
+          }
 
           li:hover{
             font-size: 30px;

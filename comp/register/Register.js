@@ -4,14 +4,13 @@ import Router from 'next/router'
 import Link from 'next/link'
 
 export default class Register extends Component {
-
   constructor () {
     super()
     this.state = {
     }
   }
 
-  addUser() {
+  addUser () {
     let username = this.refs.username.value
     let password = this.refs.password.value
     if (username) {
@@ -20,40 +19,39 @@ export default class Register extends Component {
         password: password
       })
       .then(function (response) {
-        if(response.data.message === 'A user with the given username is already registered'){
+        if (response.data.message === 'A user with the given username is already registered') {
           return alert(response.data.message)
-        }else {
+        } else {
           alert(`Welcome to HCB ${username}`)
-          Router.push('/');
+          Router.push('/')
         }
       })
       .catch(function (error) {
         console.log(error)
       })
     }
-
   }
 
   render () {
     return (
       <div>
-          <div className='container'>
-            <div className='vid-container'>
-              <img className='bgvid' src='http://wallpapercave.com/wp/2GFdZrW.jpg' />
-              <div className='inner-container'>
-                <img src='http://wallpapercave.com/wp/2GFdZrW.jpg' className='bgvid' className='bgvid inner' />
-                <div className='box'>
-                  <h1>Register Son!</h1>
-                  <input type='text' ref="username" placeholder='Username'/>
-                  <input type='password' ref="password" placeholder='Password'/>
-                  <button type="button" onClick={this.addUser.bind(this)}>Register</button>
-                  <p>Are you member? <span><Link href="/login"><a>Log In</a></Link></span></p>
-                </div>
+        <div className='container'>
+          <div className='vid-container'>
+            <img className='bgvid' src='http://wallpapercave.com/wp/2GFdZrW.jpg' />
+            <div className='inner-container'>
+              <img src='http://wallpapercave.com/wp/2GFdZrW.jpg' className='bgvid inner' />
+              <div className='box'>
+                <h1>Register Son!</h1>
+                <input type='text' ref='username' placeholder='Username' />
+                <input type='password' ref='password' placeholder='Password' />
+                <button type='button' onClick={this.addUser.bind(this)}>Register</button>
+                <p>Are you member? <span><Link href='/login'><a>Log In</a></Link></span></p>
               </div>
             </div>
           </div>
+        </div>
         <style jsx>
-        {`
+          {`
           body{
             padding:0;
             margin:0;
@@ -139,5 +137,4 @@ export default class Register extends Component {
       </div>
     )
   }
-
 }
