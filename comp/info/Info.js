@@ -4,9 +4,9 @@ import {Row, Col} from 'react-grid-system'
 const Info = () => (
   <div className='container'>
     <Row>
-      <Col lg={4} md={6} sm={6} xs={6}>
+      <Col lg={4} md={6} sm={6} xs={12}>
         <div className='card'>
-          <img className='cardImg' src='http://www.chinatrucks.com/uploadfile/news/uploadfile/201204/20120426083955199.jpg' />
+          <img className='cardImg' src='/static/respeto.jpg' />
           <h1 className='title'>
             Respeto
           </h1>
@@ -19,9 +19,9 @@ const Info = () => (
           <br />
         </div>
       </Col>
-      <Col lg={4} md={6} sm={6} xs={6}>
+      <Col lg={4} md={6} sm={6} xs={12}>
         <div className='card'>
-          <img className='cardImg' src='http://www.freegreatpicture.com/files/141/19761-hd-truck-truck.jpg' />
+          <img className='cardImg' src='/static/compromiso.jpg' />
           <h1 className='title'>
             Compromiso
           </h1>
@@ -32,9 +32,9 @@ const Info = () => (
           </p>
         </div>
       </Col>
-      <Col lg={4} md={6} sm={6} xs={6}>
+      <Col lg={4} md={6} sm={6} xs={12}>
         <div className='card'>
-          <img className='cardImg' src='http://www.skf.com/binary/202-167321/full/13468-010.jpg' />
+          <img className='cardImg' src='/static/Honestidad.jpg' />
           <h1 className='title'>
             Honestidad
           </h1>
@@ -48,9 +48,9 @@ const Info = () => (
           <br />
         </div>
       </Col>
-      <Col lg={4} md={6} sm={6} xs={6}>
+      <Col lg={4} md={6} sm={6} xs={12}>
         <div className='card'>
-          <img className='cardImg' src='https://previews.123rf.com/images/suljo/suljo1006/suljo100600013/7241998-HDR-image-of-two-trucks-in-transportation-route-Stock-Photo-logistics-truck-transport.jpg' />
+          <img className='cardImg' src='/static/vanguardia.jpg' />
           <h1 className='title'>
             Vanguardia
           </h1>
@@ -63,9 +63,9 @@ const Info = () => (
           <br />
         </div>
       </Col>
-      <Col lg={4} md={6} sm={6} xs={6}>
+      <Col lg={4} md={6} sm={6} xs={12}>
         <div className='card'>
-          <img className='cardImg' src='http://roadweigh.com/files/truck-in-transport.jpg' />
+          <img className='cardImg' src='/static/calidad.jpg' />
           <h1 className='title'>
             Calidad
           </h1>
@@ -111,6 +111,8 @@ const Info = () => (
         box-shadow: 0 1px 2px rgba(0,0,0,0.15);
         transition: box-shadow 0.3s ease-in-out;
         padding: 20px;
+        height: 450px;
+        margin-top:20px;
       }
 
       .card p {

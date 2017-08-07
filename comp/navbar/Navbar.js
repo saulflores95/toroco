@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Navbar = () => (
   <div className='container'>
     <div className='ull'>
-      <li className='user'><h1></h1></li>
+      <li className='user'><h1 /></li>
       <li className='li'><Link href='/'><img className='img' src='http://taketheleash.nl/wp-content/plugins/ionmoon-flex-slider/assets/img/leftarrowdark.png' /></Link></li>
     </div>
     <style jsx>

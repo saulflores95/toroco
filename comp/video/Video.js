@@ -1,10 +1,13 @@
 import React from 'react'
+const oldVideoUrl = 'http://cdn.shutterstock.com/shutterstock/videos/4462838/preview/stock-footage--wheel-truck-on-the-road-with-sunset-in-the-background-large-delivery-truck-is-moving-towards-set.mp4'
+const oldVideoUrl2 = 'https://videos.pond5.com/truck-highway-2-footage-033305026_main_xxl.mp4'
 
+const newVideoUrl = 'http://ak9.picdn.net/shutterstock/videos/3422519/preview/stock-footage-truck-driving-along-a-bridge-high-quality-d-animation.mp4'
 const Video = () => (
   <div className='container'>
     <div className='videoContainer'>
       <video width='100%' height='100%' autoPlay loop muted>
-        <source src='http://cdn.shutterstock.com/shutterstock/videos/4462838/preview/stock-footage--wheel-truck-on-the-road-with-sunset-in-the-background-large-delivery-truck-is-moving-towards-set.mp4' type='video/mp4' />
+        <source src={newVideoUrl} type='video/mp4' />
         <source src='https://videos.pond5.com/truck-highway-2-footage-033305026_main_xxl.mp4' type='video/mp4' />
         Your browser does not support the video tag.
       </video>
@@ -25,11 +28,10 @@ const Video = () => (
             z-index: 100;
           }
 
-          .video-container video {
+          video {
             /* Make video to at least 100% wide and tall */
             min-width: 100%;
             min-height: 100%;
-
             /* Setting width & height to auto prevents the browser from stretching or squishing the video */
             width: auto;
             height: auto;
@@ -39,6 +41,8 @@ const Video = () => (
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            /* margin fix */
+            margin-left: -50px;
           }
 
           .overlay {
@@ -48,13 +52,14 @@ const Video = () => (
             left: 0;
             right: 30%;
             width: 95%;
-            font-family:'Roboto'
             max-width: 50em;
             margin: auto auto 1em;
             box-sizing: border-box;
             padding: 2em;
             line-height: 1.5;
+            -webkit-text-align: center;
             text-align: center;
+            font-family: Roboto;
           }
 
           .overlay h1 {
@@ -63,7 +68,7 @@ const Video = () => (
           }
         }
 
-        @media only screen and (min-width: 481px) and (max-width: 1024px) {
+        @media only screen and (min-width: 481px) and (max-width: 1000px) {
           .video-container {
             position: absolute;
             top: 0;

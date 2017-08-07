@@ -1,111 +1,149 @@
+import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
-import {Container, Row, Col} from 'react-grid-system'
-import Navbar from '../navbar/Navbar'
-const position = [32.5194358, -117.0101997]
-import NoSSR from 'react-no-ssr'
-import { Component } from 'react'
-//  const tijuana = [32.545048, -116.999554]
-//  const sanDiego = [32.574632, -116.962051]
+import {Col, Row} from 'react-grid-system'
+import RaisedButton from 'material-ui/RaisedButton'
+import axios from 'axios'
 
 export default class Contact extends Component {
+  handleEmail () {
+    console.log(this.refs.name.getValue())
+    console.log()
+    console.log(this.refs.phone.getValue())
+    console.log(this.refs.message.getValue())
+    axios.post('/test', {
+      name: this.refs.name.getValue(),
+      email: this.refs.email.getValue(),
+      phone: this.refs.phone.getValue(),
+      message: this.refs.message.getValue()
+    })
+    .then(function (response) {
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+  }
+
   render () {
-    var { Map, Marker, Popup, TileLayer } = require('react-leaflet')
     return (
       <div className='wrapper'>
-        <div className='imgcontainer'>
-          <img width='100px' height='100px' src='http://www.torocotrucking.com/freightmanager/images/main_logo.jpg' />
-        </div>
-        <h2 className='text'>Contact us</h2>
-        <h2 className='text'>It is our pleasure!</h2>
-        <Container className='contactForm'>
-          <MuiThemeProvider>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6}>
+            <MuiThemeProvider>
+              <div className='form-wrapper'>
+                <div className='text-container'>
+                  <h2 className='text'>Deja tu informacion</h2>
+                </div>
+                <TextField
+                  hintText={<span className='label'>Nombre</span>}
+                  fullWidth
+                  ref='name'
+                /><br />
+                <TextField
+                  hintText={<span className='label'>Correo</span>}
+                  fullWidth
+                  ref='email'
+                /><br />
+                <TextField
+                  hintText={<span className='label'>Telefono</span>}
+                  fullWidth
+                  ref='phone'
+                /><br />
+                <TextField
+                  hintText={<span className='label'>Mensaje</span>}
+                  fullWidth
+                  multiLine
+                  rows={2}
+                  ref='message'
+              /><br />
+                <div className='button-form'>
+                  <div className='button-container'>
+                    <RaisedButton
+                      label={<span style={{color: 'black'}}>Enviar</span>}
+                      labelPosition='before'
+                      primary={false}
+                      className='raised-button'
+                      style={{width: 180, marginTop: 20, marginBottom: 20, backgroundColor: 'inherit'}}
+                      onClick={this.handleEmail.bind(this)}
+                  />
+                  </div>
+                </div>
+              </div>
+            </MuiThemeProvider>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} style={{padding: 0, maxHeight: 388}}>
             <div>
-              <TextField
-                hintText={<span className='label'>Name</span>}
-                fullWidth
-              /><br />
-              <TextField
-                hintText={<span className='label'>Email</span>}
-                fullWidth
-              /><br />
-              <TextField
-                hintText={<span className='label'>Phone</span>}
-                fullWidth
-              /><br />
-              <TextField
-                hintText={<span className='label'>Message</span>}
-                fullWidth
-                multiLine
-                rows={2}
-            /><br />
+              <iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13453.01321741493!2d-116.9534487!3d32.5460843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d8220aae7ef18!2sToroco+Trucking!5e0!3m2!1ses-419!2smx!4v1500584628741' width='100%' height='388' allowFullScreen style={{border: 0}} />
             </div>
-          </MuiThemeProvider>
-            <div className='map'>
-              <Map center={position} zoom={12}>
-                <TileLayer
-                  url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-                />
-              </Map>
-            </div>
-          <div>
-            <Row>
-              <Col lg={6} md={6} sm={6}>
-                <div className='number'>
-                  <h1>Tijuana</h1>
-                  <h3><b>Tel: </b>(664) 647-8794 </h3>
-                  <h3><b>Tel: </b>(664) 647-5930 </h3>
-                  <h3><b>Fax: </b>(619) 758-3634 </h3>
-                </div>
-              </Col>
-              <Col lg={6} md={6} sm={6}>
-                <div className='number'>
-                  <h1>San Diego</h1>
-                  <h3><b>Tel: </b>(619) 671-5840</h3>
-                  <h3><b>Fax: </b>(619) 758-3634</h3>
-                </div>
-              </Col>
-            </Row>
-          </div>
-        </Container>
+          </Col>
+        </Row>
         <style jsx>
           {`
-              .wrapper{
-                padding-top: 30px;
-              }
+            .wrapper{
+              max-width: 875px;
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+              background-color: #fbfaf8;
+            }
 
-              .text{
-                text-align: center;
-                color: gray;
-                font-size: 16px;
-              }
+            .text{
+              text-align: left;
+              color: black;
+              font-size: 27px;
+              font-family: Roboto !important;
+              font-weight: 400;
+              text-transform: uppercase;
+            }
 
-              .label {
-                color: gray !important;
-              }
+            .label {
+              color: black !important;
+              background-image: none !important;
+              font-family: Roboto !important;
+              font-size: 14px !important;
+            }
+            .form-wrapper {
+              padding-left: 15px;
+            }
 
-              .imgcontainer{
-                width: 100px;
-                height: 100px;
-                margin-left: auto;
-                margin-right: auto;
-                display: block;
-              }
+            .img-container {
+              margin-right: auto;
+              display: block;
+              width: 128px;
+              height: 128px;
+              margin-left: auto;
+            }
 
-              .contactForm {
-                padding-top: 15px;
-              }
+            .contactForm {
+              padding-top: 15px;
+            }
 
-              .map {
-                height: 350px;
-                margin-bottom: 55px;
-              }
+            .img {
+              margin-left: auto;
+              margin-right: auto;
+              display: bock;
+            }
 
-              .number {
-                text-align: center;
-              }
+            .text-container {
+              left: 0;
+            }
 
-            `}
+            .button-form {
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+              height: 76px;
+            }
+
+            .button-container {
+              background-color: black;
+              height: 0;
+            }
+            .button-container:hover {
+              background-color: #5e5e5e;
+            }
+          `}
         </style>
       </div>
     )

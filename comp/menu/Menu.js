@@ -5,9 +5,9 @@ const Menu = () => (
     <div id='menu' className='menuContainer'>
       <div>
         <ul className='linkContainer'>
-          <li className='li'><Link href='/quienes-somos'><a>Quienes Somos</a></Link></li>
-          <li className='li'><Link href='/servicios'><a>Servicios</a></Link></li>
-          <li className='li'><Link href='/contacto'><a>Contactanos</a></Link></li>
+          <li className='li'><Link prefetch href='/quienes-somos'><a>Nosotros</a></Link></li>
+          <li className='li'><Link prefetch href='/servicios'><a>Servicios</a></Link></li>
+          <li className='li'><Link prefetch href='/contacto'><a>Contactanos</a></Link></li>
           <li className='li'><img src='http://www.torocotrucking.com/freightmanager/images/main_logo.jpg' /></li>
         </ul>
       </div>
@@ -23,7 +23,6 @@ const Menu = () => (
             height:100%;
             width: 35%;
             max-width: 50em;
-            margin: auto auto 1em;
           }
           .menu-container {
             z-index: 1;
