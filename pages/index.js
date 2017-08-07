@@ -5,6 +5,7 @@ import Overdrive from 'react-overdrive'
 import { Visible } from 'react-grid-system'
 import MobileHome from '../comp/home/mobile'
 import Services from '../comp/services/Services'
+import MobileMenu from '../comp/menu/mobileMenu'
 
 export default () => (
   <Overdrive id='transition'>
@@ -16,6 +17,7 @@ export default () => (
         </Visible>
         <Visible xs sm md>
           <div>
+            <MobileMenu />
             <MobileHome />
             <Services />
           </div>
