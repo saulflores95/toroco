@@ -5,7 +5,7 @@ const MobileHome = () => (
     <div className='mobile-header'>
       <div className='typer-div'>
         <Typist>
-          <h1>Estrategia en tiempo real.</h1>
+          <h1>Lider en transoporte</h1>
         </Typist>
       </div>
     </div>

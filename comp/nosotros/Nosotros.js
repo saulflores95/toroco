@@ -32,7 +32,7 @@ const Nostros = () => (
            background: #F2F2F2;
            font-family: Roboto;
            padding:50px;
-           text-align: justify;
+          text-align: justify;
            margin: -15px;
           }
 

@@ -15,8 +15,12 @@ const App = (props) => (
         #__next {
           height: 100%;
         }
-        .body {
+        html, body {
+          max-width: 100%;
+          overflow-x: hidden;
           font-family: Roboto;
+          margin-left: 0px;
+          margin-top: 0px;
         }
       `}</style>
     </Head>
