@@ -34,6 +34,7 @@
     "next-routes": "^1.0.27",
     "passport": "^0.3.2",
     "passport-local-mongoose": "^4.0.0",
+    "raf": "^3.3.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-fontawesome": "^1.6.1",
@@ -43,6 +44,8 @@
     "react-overdrive": "^0.0.7",
     "react-tap-event-plugin": "^2.0.1",
     "react-typist": "^1.1.1",
-    "s3fs": "^2.5.0"
+    "s3fs": "^2.5.0",
+    "scroll-to-element": "^2.0.0",
+    "tween": "^0.9.0"
   }
 }

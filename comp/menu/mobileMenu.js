@@ -8,6 +8,7 @@ import Menu from 'material-ui/svg-icons/navigation/menu';
 import Exit from 'material-ui/svg-icons/action/exit-to-app';
 import Link from 'next/link'
 import Divider from 'material-ui/Divider';
+import scrollToElement from 'scroll-to-element'
 
 export default class MobileMenu extends Component {
 
@@ -23,6 +24,12 @@ export default class MobileMenu extends Component {
 
   handleToggle = () => this.setState({open: !this.state.open});
 
+  goTo(idName) {
+    console.log('clicked')
+    let el = global.document.getElementById(idName)
+    scrollToElement(el)
+  }
+
   render() {
     const menuStyle = {
       height: '50px',
@@ -35,6 +42,8 @@ export default class MobileMenu extends Component {
     const exitStyle = {
       color: 'green'
     }
+
+
     return (
       <MuiThemeProvider>
         <div>
@@ -43,12 +52,11 @@ export default class MobileMenu extends Component {
             <Drawer autoFocus open={this.state.open}>
               <img alt='company-logo' className='company-logo' src='http://www.torocotrucking.com/freightmanager/images/main_logo.jpg' />
               <Divider />
-              <MenuItem><Link prefetch href='/'><a>Inicio</a></Link></MenuItem>
-              <MenuItem><Link prefetch href='/quienes-somos'><a>Nosotros</a></Link></MenuItem>
-              <MenuItem><Link prefetch href='/servicios'><a>Servicios</a></Link></MenuItem>
-              <MenuItem><Link prefetch href='/contacto'><a>Contactanos</a></Link></MenuItem>
+              <MenuItem onTouchTap={this.goTo.bind(this, 'main')}>Inicio</MenuItem>
+              <MenuItem onTouchTap={this.goTo.bind(this, 'nosotros')}>Nosotros</MenuItem>
+              <MenuItem onClick={this.goTo.bind(this, 'servicios')}>Servicios</MenuItem>
+              <MenuItem onClick={this.goTo.bind(this, 'contacto')}>Contactanos</MenuItem>
               <MenuItem onClick={this.handleToggle}><Exit style={exitStyle}/></MenuItem>
-
             </Drawer>
           </div>
           <style jsx>{`
