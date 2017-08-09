@@ -5,27 +5,31 @@ const MobileHome = () => (
     <div className='mobile-header'>
       <div className='typer-div'>
         <Typist>
-          <h1>Lider en transoporte</h1>
+          <h1>Toroco Trocking</h1>
         </Typist>
+      </div>
+      <div>
       </div>
     </div>
     <style jsx>{`
       .typer-div {
         text-align: center;
         color: white;
-        padding-top: 120px;
         font-family: Roboto;
         text-transform: uppercase;
+        align-self: center;
+        font-size:33px;
       }
       .mobile-header {
-        background-color: red;
-        background-size: 100% 500px;
-        height: 500px;
-        margin-left: -10px;
-        margin-right: -10px;
-        margin-top: -60px;
+        display: flex;
+        justify-content: center;
+        background-image: url('/static/compromiso.jpg');
+        min-height: 600px;
+        background-attachment: fixed;
+        background-position: top center;
         background-repeat: no-repeat;
-        background-image: url('/static/compromiso.jpg')
+        background-size: cover;
+        margin-top: -55px;
       }
     `}</style>
   </div>
