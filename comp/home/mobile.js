@@ -8,8 +8,7 @@ const MobileHome = () => (
           <h1>Toroco Trocking</h1>
         </Typist>
       </div>
-      <div>
-      </div>
+      <div />
     </div>
     <style jsx>{`
       .typer-div {

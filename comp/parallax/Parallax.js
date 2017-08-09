@@ -1,7 +1,6 @@
 import { Visible } from 'react-grid-system'
 
 const Parallax = ({title, img}) => {
-
   return (
     <div>
       <div className='parallax' style={{ backgroundImage: `url("${img}")` }}>
