@@ -15,9 +15,18 @@ const App = (props) => (
         #__next {
           height: 100%;
         }
-        html, body {
+        html {
           max-width: 100%;
           overflow-x: hidden;
+          font-family: Roboto;
+          margin-left: 0px;
+          margin-top: 0px;
+        }
+
+        body {
+          max-width: 100%;
+          overflow-x: hidden;
+          overflow-y: hidden;
           font-family: Roboto;
           margin-left: 0px;
           margin-top: 0px;
