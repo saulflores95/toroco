@@ -78,7 +78,7 @@ const Info = () => (
         </div>
       </Col>
     </Row>
-    <style>{`
+    <style jsx>{`
       .container {
         margin-top: 200px;
         font-family: Roboto;

@@ -19,8 +19,8 @@ const MobileHome = () => (
       }
       .mobile-header {
         background-color: red;
-        background-size: 100% 300px;
-        height: 300px;
+        background-size: 100% 500px;
+        height: 500px;
         margin-left: -10px;
         margin-right: -10px;
         margin-top: -60px;

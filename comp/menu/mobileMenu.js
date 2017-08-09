@@ -25,9 +25,12 @@ export default class MobileMenu extends Component {
 
   render() {
     const menuStyle = {
-      height: '40px',
+      height: '50px',
       width: '50px',
-      color: 'white'
+      marginTop: '70px',
+      marginLeft: '20px',
+      color: 'green',
+      zIndex: 200
     }
     const exitStyle = {
       color: 'green'

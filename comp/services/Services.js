@@ -63,6 +63,7 @@ const Services = () => (
         color: gray;
         font-size: 20px;
         padding: 100px;
+        background-color: #F8F8F8;
       }
       .heading-text-mobile {
         text-align: center;
